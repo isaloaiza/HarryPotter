@@ -4,8 +4,6 @@ import axios from 'axios';
 export const Producto = ({
   allProducts,
   setAllProducts,
-  countProducts,
-  setCountProducts,
   total,
   setTotal,
 }) => {
@@ -54,7 +52,6 @@ export const Producto = ({
     }
 
     // Actualiza el contador y el total
-    setCountProducts(countProducts + product.quantity);
     setTotal(total + defaultPrice * product.quantity);
   };
 
@@ -99,7 +96,7 @@ export const Producto = ({
                 src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
                 alt={movie.title}
               />
-              <h2>{movie.title}</h2>
+              <h2>{movie.title}</h2><br />
               <p>Precio: $10</p>
               <p>Cantidad disponible: {movie.availableQuantity}</p>
               <input
@@ -120,8 +117,8 @@ export const Producto = ({
   
                   setMovies(updatedMovies);
                 }}
-              />
-              <button onClick={() => onAddProductToCart(movie)}>Agregar al carrito</button>
+              /><br /><br />
+              <button onClick={() => onAddProductToCart(movie)} className='post'>Agregar al carrito</button>
             </div>
           ))}
         </div>

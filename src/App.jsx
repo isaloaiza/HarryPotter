@@ -10,14 +10,13 @@ function App() {
 
   const [allProducts, setAllProducts] = useState([]);
   const [total, setTotal] = useState(0);
-  const [countProducts, setCountProducts] = useState(0);
   const [availableQuantity, setAvailableQuantity] = useState(15);
 
 
   return (
     <>
       
-      <h1>Tienda de harry Potter</h1>
+      <h1 className='title'>Tienda de harry Potter</h1>
         
       <Header />
       <Routes >
@@ -26,8 +25,6 @@ function App() {
           setAllProducts={setAllProducts}
           total={total}
           setTotal={setTotal}
-          countProducts={countProducts}
-          setCountProducts={setCountProducts}
           availableQuantity={availableQuantity}
           setAvailableQuantity={setAvailableQuantity}/>} />
 
@@ -36,8 +33,6 @@ function App() {
           setAllProducts={setAllProducts}
           total={total}
           setTotal={setTotal}
-          countProducts={countProducts}
-          setCountProducts={setCountProducts} 
           availableQuantity={availableQuantity}
           setAvailableQuantity={setAvailableQuantity}/>} />
       </Routes>

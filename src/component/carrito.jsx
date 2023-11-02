@@ -4,8 +4,6 @@ export const Carrito = ({
     allProducts,
     setAllProducts,
     total,
-    countProducts,
-    setCountProducts,
     setTotal,
 }) => {
 
@@ -15,14 +13,12 @@ export const Carrito = ({
         );
 
         setTotal(total - product.price * product.quantity);
-        setCountProducts(countProducts - product.quantity);
         setAllProducts(results);
     };
 
     const onCleanCart = () => {
         setAllProducts([]);
         setTotal(0);
-        setCountProducts(0);
     };
 
     return (
