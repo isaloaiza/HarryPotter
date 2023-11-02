@@ -1,0 +1,180 @@
+/* Globales */
+*::after,
+*::before,
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	padding: 30px;
+	margin: 0 auto;
+	max-width: 1300px;
+	font-family: 'Lato';
+	color: #333;
+	text-decoration: none;
+}
+
+
+
+img {
+	max-width: 100%;
+}
+/*header*/
+header {
+	display: flex;
+	justify-content: space-around;
+	padding: 30px 0 40px 0;
+}
+
+.link{
+	text-decoration: none;
+	border: 2px solid rgb(187, 115, 253);
+	padding: 10px;
+	width: 120px;
+	text-align: center;
+}
+
+.count-products {
+	position: absolute;
+	top: 55%;
+	right: 0;
+	background-color: #000;
+	color: #fff;
+	width: 25px;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+
+#contador-productos {
+	font-size: 12px;
+}
+
+.small{
+  height: 150px;
+  width: 150px;
+}
+
+
+
+.cart-product {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px;
+  width: 800px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.info-cart-product {
+	display: flex;
+	justify-content: space-between;
+  align-items: center;
+	flex: 0.8;
+}
+
+.titulo-producto-carrito {
+	font-size: 20px;
+}
+
+.precio-producto-carrito {
+	font-weight: 700;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.cantidad-producto-carrito {
+	/*font-weight: 400;*/
+	font-size: 20px;
+}
+
+.icon-close {
+	width: 25px;
+	height: 25px;
+}
+
+.icon-close:hover {
+	stroke: red;
+	cursor: pointer;
+}
+
+.cart-total {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0;
+	gap: 20px;
+}
+
+.cart-total h3 {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.total-pagar {
+	font-size: 20px;
+	font-weight: 900;
+}
+
+.cart-empty {
+	padding: 20px;
+	text-align: center;
+}
+
+
+.btn-clear-all {
+	border: none;
+	background-color: #000;
+	color: #fff;
+	padding: 15px 0;
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	font-family: inherit;
+	cursor: pointer;
+  font-size: 16px;
+  transition: all .3s ease;
+}
+
+.btn-clear-all:hover{
+  background-color: #333;
+  transform: scale(1.03);
+  border-radius: 0;
+}
+
+/*movie cart*/
+.aument{
+	display: flex;
+	gap:2px;
+}
+.movie-card{
+	border: 1px solid #000;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+.movie-list{
+	display: grid;
+	text-align: center;
+	grid-template-columns: repeat(auto-fit,
+  minmax(300px, 3fr));
+  row-gap: 15px;
+  gap: 5px;
+  padding: 2em 0;
+  color: #000000;
+}
+
+.car{
+	background: rgb(187, 115, 253);
+	color: #fff;
+	width: 200px;
+	padding: 3px;
+	border-radius: 10px;
+	border: none;
+}
