@@ -59,7 +59,7 @@ header {
 	padding: 30px;
   width: 800px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-	background-color: rgba(77, 57, 16, 0.658);
+	background-color: rgba(90, 65, 14, 0.849);
 	color: #fff;
 }
 
@@ -125,7 +125,7 @@ header {
 
 .btn-clear-all {
 	border: none;
-	background-color: #4b0c0c9f;
+	background-color: #4b0c0c;
 	color: #fff;
 	padding: 15px 0;
 	display: block;
