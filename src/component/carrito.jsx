@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const Carrito = ({
     allProducts,
@@ -6,6 +7,8 @@ export const Carrito = ({
     total,
     setTotal,
 }) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const navigate = useNavigate();
 
     const onDeleteProduct = product => {
         const results = allProducts.filter(
@@ -19,6 +22,11 @@ export const Carrito = ({
     const onCleanCart = () => {
         setAllProducts([]);
         setTotal(0);
+    };
+
+    const onConfirmProduct = () => {
+        setIsModalOpen(true);
+        onCleanCart();
     };
 
     return (
@@ -37,7 +45,7 @@ export const Carrito = ({
                                             {product.nameProduct}
                                         </p>
                                         <span className='precio-producto-carrito'>
-                                            ${product.price} 
+                                            ${product.price}
                                         </span>
                                         <span className='total-producto-carrito'>
                                             Total: ${product.price * product.quantity}
@@ -70,11 +78,29 @@ export const Carrito = ({
                         <button className='btn-clear-all' onClick={onCleanCart}>
                             Vaciar Carrito
                         </button>
+                        <button className='btn-clear-all' onClick={onConfirmProduct}>
+                            Confirmar compra
+                        </button>
                     </>
                 ) : (
                     <p className='cart-empty'>El carrito está vacío</p>
+                )}
+                {isModalOpen && (
+                    <div className="modal">
+                        <div className='modal-content'>
+                            <h2>Compra exitosa</h2>
+                            <p>¡Gracias por tu compra!</p>
+                            <button onClick={() => {
+                                setIsModalOpen(false);
+                                navigate('/');
+                            }}>
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
                 )}
             </div>
         </header>
     );
 };
+

@@ -6,6 +6,7 @@ import { Carrito } from './component/carrito'
 import { Producto } from './component/Productos'
 
 
+
 function App() {
 
   const [allProducts, setAllProducts] = useState([]);
@@ -37,9 +38,7 @@ function App() {
           setAvailableQuantity={setAvailableQuantity}/>} />
       </Routes>
       
-
-
-
+  
     </>
   )
 }

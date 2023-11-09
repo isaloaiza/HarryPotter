@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+
+
 
 export const Producto = ({
   allProducts,
@@ -9,6 +11,7 @@ export const Producto = ({
 }) => {
   const [movies, setMovies] = useState([]);
   const defaultPrice = 10; 
+ 
 
   const onAddProductToCart = (product) => {
     
@@ -53,6 +56,7 @@ export const Producto = ({
 
     
     setTotal(total + defaultPrice * product.quantity);
+    
   };
 
   useEffect(() => {
