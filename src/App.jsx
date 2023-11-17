@@ -4,42 +4,29 @@ import { useState } from 'react';
 import { Header } from './component/Header'
 import { Carrito } from './component/carrito'
 import { Producto } from './component/Productos'
-
-
+import { AvailableQuantityProvider } from './AvailableQuantityContext';//se esta manejando en esa ruta
 
 function App() {
-
   const [allProducts, setAllProducts] = useState([]);
   const [total, setTotal] = useState(0);
-  const [availableQuantity, setAvailableQuantity] = useState(15);
-
 
   return (
-    <>
-      
-      <h1 className='title'>Tienda de harry Potter</h1>
-        
+    <AvailableQuantityProvider>
       <Header />
       <Routes >
         <Route path='/' element={<Producto
           allProducts={allProducts}
           setAllProducts={setAllProducts}
           total={total}
-          setTotal={setTotal}
-          availableQuantity={availableQuantity}
-          setAvailableQuantity={setAvailableQuantity}/>} />
+          setTotal={setTotal}/>} />
 
         <Route path='/carrito' element={<Carrito
           allProducts={allProducts}
           setAllProducts={setAllProducts}
           total={total}
-          setTotal={setTotal}
-          availableQuantity={availableQuantity}
-          setAvailableQuantity={setAvailableQuantity}/>} />
+          setTotal={setTotal}/>} />
       </Routes>
-      
-  
-    </>
+    </AvailableQuantityProvider>
   )
 }
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-
-
+import { AvailableQuantityContext } from '../AvailableQuantityContext';
 
 export const Producto = ({
   allProducts,
@@ -9,13 +8,12 @@ export const Producto = ({
   total,
   setTotal,
 }) => {
+  const { availableQuantity, setAvailableQuantity } = useContext(AvailableQuantityContext);
   const [movies, setMovies] = useState([]);
-  const defaultPrice = 10; 
- 
+  const defaultPrice = 10;
 
   const onAddProductToCart = (product) => {
-    
-    const nuevaCantidadTotal = product.availableQuantity - product.quantity;
+    const nuevaCantidadTotal = availableQuantity - product.quantity;
 
     if (nuevaCantidadTotal < 0) {
       alert('No puedes agregar más de este producto al carrito');
@@ -25,6 +23,8 @@ export const Producto = ({
     if (nuevaCantidadTotal === 0) {
       alert('Producto agotado');
     }
+
+    setAvailableQuantity(nuevaCantidadTotal);
 
     
     const updatedMovies = movies.map(movie =>
@@ -59,6 +59,8 @@ export const Producto = ({
     
   };
 
+  
+
   useEffect(() => {
    
     async function fetchMovies() {
@@ -77,7 +79,7 @@ export const Producto = ({
         
         const moviesWithQuantity = movieResponse.data.results.map(movie => ({
           ...movie,
-          availableQuantity: 10, 
+          availableQuantity: availableQuantity, 
           quantity: 1, 
         }));
 
@@ -101,7 +103,7 @@ export const Producto = ({
                 alt={movie.title}
               />
               <h2>{movie.title}</h2><br />
-              <p>Precio: $10</p>
+              <p>Precio: $50</p>
               <p>Cantidad disponible: {movie.availableQuantity}</p>
               <input
                 type="number"

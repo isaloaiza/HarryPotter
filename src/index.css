@@ -14,25 +14,23 @@ body {
 	font-family: cursive;
 	color: #333;
 	text-decoration: none;
-	background-image: url(../public/libreria2.jpg);
+	background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(../public/libreria2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
-	
-	
 }
-
-
 
 img {
 	max-width: 100%;
 }
 /*header*/
 header {
+
 	display: flex;
 	justify-content: space-around;
 	padding: 30px 0 40px 0;
+	background-color: #000000,
 }
 
 .title{
@@ -42,7 +40,8 @@ header {
 .link{
 	text-decoration: none;
 	background-color: rgba(136, 94, 11, 0.863) ;
-	border: 2px solid rgba(255, 255, 255, 0.753);
+	border: 0.5px solid rgba(255, 255, 255, 0.753);
+	border-radius: 6px;
 	padding: 10px;
 	width: 120px;
 	text-align: center;
@@ -59,7 +58,7 @@ header {
 	padding: 30px;
   width: 800px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-	background-color: rgba(90, 65, 14, 0.849);
+	background-color: rgba(90, 65, 14, 0.904);
 	color: #fff;
 }
 
@@ -159,11 +158,12 @@ header {
 .movie-list{
 	display: grid;
 	text-align: center;
+	
 	grid-template-columns: repeat(auto-fit,
   minmax(300px, 3fr));
   row-gap: 17px;
   gap: 20px;
-  padding: 2em 0;
+  padding: 2em 5em;
   color: #000000;
 }
 
@@ -219,7 +219,7 @@ header {
   }
   
   .modal-content button {
-	background-color: #007BFF;
+	background-color: #4b0c0ccb;
 	color: #fff;
 	border: none;
 	border-radius: 4px;
