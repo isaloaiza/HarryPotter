@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Header } from './component/Header'
 import { Carrito } from './component/carrito'
 import { Producto } from './component/Productos'
-import { AvailableQuantityProvider } from './AvailableQuantityContext';//se esta manejando en esa ruta
+import { AvailableQuantityProvider } from './AvailableQuantityContext';
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
